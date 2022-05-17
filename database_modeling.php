@@ -13,14 +13,14 @@
     }
 
     // Create database
-    $sql = "CREATE DATABASE $database";
+    $sql = "CREATE DATABASE IF NOT EXISTS $database";
     $conn->query($sql);
 
     // Select database
     $conn = new mysqli($servername, $username, $password, $database);
 
     // Create users table
-    $sql = "CREATE TABLE Users (
+    $sql = "CREATE TABLE IF NOT EXISTS Users (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         firstName NVARCHAR(30) NOT NULL,
         lastName NVARCHAR(30) NOT NULL
@@ -28,7 +28,7 @@
     $conn->query($sql);
 
     // Create articles table
-    $sql = "CREATE TABLE Articles (
+    $sql = "CREATE TABLE IF NOT EXISTS Articles (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         title NVARCHAR(50) NOT NULL,
         content NVARCHAR(500) NOT NULL,
@@ -39,7 +39,7 @@
     $conn->query($sql);
 
      // Create comments table
-     $sql = "CREATE TABLE Comments (
+     $sql = "CREATE TABLE IF NOT EXISTS Comments (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         content NVARCHAR(500) NOT NULL,
         userId INT(6) UNSIGNED NOT NULL,
