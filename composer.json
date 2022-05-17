@@ -1,0 +1,11 @@
+{
+    "name": "alex/recipes_blog",
+    "autoload": {
+        "psr-4": {
+            "Alex\\RecipesBlog\\": "src/"
+        }
+    },
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}
