@@ -1,8 +1,8 @@
 <?php
     $servername = "localhost";
     $database = "recipes_blog";
-    $username = "root_admin";
-    $password = "root123";
+    $username = "root";
+    $password = "";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password);
