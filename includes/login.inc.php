@@ -21,7 +21,7 @@ if (isset($_POST['login-submit'])) {
             if ($row = mysqli_fetch_assoc($result)) {
                 $passwordCheck = password_verify($password, $row['password']);
                 if ($passwordCheck == false) {
-                    header("Location: ../index.php?error=wrongpassword");
+                    header("Location: ../index.php?error=wrongpassword&pwd=".$passwordCheck);
                     exit();
                 } else {
                     session_start();
