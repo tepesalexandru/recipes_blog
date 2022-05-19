@@ -6,6 +6,8 @@ require 'database_modeling.php'
     <?php
     if (!isset($_SESSION['userId'])) {
         include("login.php");
+    } else {
+        include("articles.php");
     }
     ?>
 </main>
