@@ -44,7 +44,7 @@
             </div>
             <!-- end card -->
 
-            <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a href="signup.php" class="text-primary ml-1">register</a></p>
+            <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a href="signup.php" class="text-primary ml-1">Register here</a></p>
 
             <!-- end row -->
 
