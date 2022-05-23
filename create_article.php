@@ -7,7 +7,7 @@ require 'header.php';
         <h3 class="h4 font-weight-bold text-theme">Create a new article</h3>
     </div>
     <p class="text-muted mt-2 mb-5">Easily create new articles by simply filling the form down below.</p>
-    <form action="includes/create_article.inc.php" method="POST">
+    <form action="includes/articles/create_article.inc.php" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">Title</label>
             <input type="text" class="form-control" id="exampleInputEmail1" name="title">
