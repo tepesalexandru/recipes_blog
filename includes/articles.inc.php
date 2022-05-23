@@ -18,3 +18,10 @@ function getBlogById($conn, $id)
     $firstRow = mysqli_fetch_assoc($result); 
     return $firstRow;
 }
+
+function getArticleComments($conn, $articleId) {
+    $sql = "SELECT Users.Username as name, content FROM Comments
+    JOIN Users ON Users.Id = Comments.UserId
+    WHERE Comments.ArticleId = $articleId";
+    return $conn->query($sql);
+}
