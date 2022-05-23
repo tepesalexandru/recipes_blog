@@ -7,11 +7,12 @@ $twig = new \Twig\Environment($loader);
 $articles = getBlogs($conn);
 
 ?>
+<a href="create_article.php">Create article</a>
 <div class="container">
     <div class="row">
         <?php
         foreach ($articles as $card) {
-            echo $twig->render('blog_card.html.twig', ['name' => $card['Author']]);
+            echo $twig->render('blog_card.html.twig', ['title' => $card['title'], 'content' => $card['content'], 'author' => $card['author']]);
         }
         ?>
     </div>
