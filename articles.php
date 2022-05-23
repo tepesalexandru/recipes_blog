@@ -12,7 +12,7 @@ $articles = getBlogs($conn);
     <div class="row">
         <?php
         foreach ($articles as $card) {
-            echo $twig->render('blog_card.html.twig', ['title' => $card['title'], 'content' => $card['content'], 'author' => $card['author']]);
+            echo $twig->render('blog_card.html.twig', ['title' => $card['title'], 'content' => $card['content'], 'author' => $card['author'], 'id' => $card['id']]);
         }
         ?>
     </div>
