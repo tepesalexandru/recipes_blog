@@ -1,0 +1,19 @@
+<div class="p-5">
+	<div class="mb-1">
+		<h3 class="h4 font-weight-bold text-theme">{{title}}</h3>
+	</div>
+	<div class="blockquote-footer mt-2">Written by
+		<cite title="Author">{{author}}</cite>
+	</div>
+	<form action="includes/articles/create_article.inc.php" method="POST">
+		<div class="form-group">
+			<label for="exampleInputEmail1">Title</label>
+			<input type="text" class="form-control" id="exampleInputEmail1" name="title">
+		</div>
+		<div class="form-group mb-5">
+			<label for="exampleInputPassword1">Content</label>
+			<textarea type="text" class="form-control" id="exampleInputPassword1" name="content" rows="10"></textarea>
+		</div>
+		<button type="submit" name="create-article-submit" class="btn btn-theme">Create</button>
+	</form>
+</div>

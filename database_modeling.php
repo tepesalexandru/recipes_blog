@@ -32,7 +32,7 @@
     $sql = "CREATE TABLE IF NOT EXISTS Articles (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         title NVARCHAR(50) NOT NULL,
-        content NVARCHAR(500) NOT NULL,
+        content NVARCHAR(5000) NOT NULL,
         authorId INT(6) UNSIGNED NOT NULL,
         FOREIGN KEY (authorId) REFERENCES Users(id)
     )";
