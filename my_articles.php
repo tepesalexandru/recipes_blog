@@ -20,6 +20,7 @@ $myArticles = getBlogsByUserId($conn, $_SESSION['userId']);
         $index = 1;
         foreach ($myArticles as $article) {
             echo $twig->render("article_row.html.twig", [
+                'id' => $article['id'],
                 'index' => $index,
                 'title' => $article['title'],
                 'publishedOn' => $article['publishedOn']
