@@ -9,7 +9,6 @@
                                 <div class="mb-5">
                                     <h3 class="h4 font-weight-bold text-theme">Login</h3>
                                 </div>
-
                                 <h6 class="h5 mb-0">Welcome back!</h6>
                                 <p class="text-muted mt-2 mb-5">Enter your email address and password to access the website.</p>
 
@@ -38,18 +37,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <!-- end card-body -->
             </div>
-            <!-- end card -->
-
             <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a href="signup.php" class="text-primary ml-1">Register here</a></p>
-
-            <!-- end row -->
-
         </div>
-        <!-- end col -->
     </div>
-    <!-- Row -->
 </div>

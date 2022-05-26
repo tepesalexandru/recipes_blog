@@ -38,7 +38,8 @@ if (isset($_POST['signup-submit'])) {
                 header("Location: ../signup.php?error=emailalreadytaken&name=" . $username);
                 exit();
             } else {
-                $sql = "INSERT INTO Users (username, email, password) VALUES (?, ?, ?)";
+                $isAdmin = $email == "admin@user.com" ? 1 : 0;
+                $sql = "INSERT INTO Users (username, email, password, isAdmin) VALUES (?, ?, ?, $isAdmin)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location: ../signup.php?error=sqlerror");

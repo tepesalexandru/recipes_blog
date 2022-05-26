@@ -24,7 +24,8 @@
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         username NVARCHAR(50) NOT NULL,
         email NVARCHAR(50) NOT NULL,
-        password NVARCHAR(100) NOT NULL
+        password NVARCHAR(100) NOT NULL,
+        isAdmin INT(6) NOT NULL
     )";
     $conn->query($sql);
 
@@ -51,5 +52,4 @@
     )";
 
     $conn->query($sql);
-
 ?>

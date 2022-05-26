@@ -20,6 +20,11 @@
 						<li>
 							<a class="dropdown-item" href="my_articles.php">My articles</a>
 						</li>
+						{% if isAdmin == true %}
+							<li>
+								<a class="dropdown-item" href="admin_panel.php">Admin panel</a>
+							</li>
+						{% endif %}
 						<li>
 							<hr class="dropdown-divider">
 						</li>

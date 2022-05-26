@@ -23,7 +23,7 @@ session_start();
     <?php
     require './includes/twig.inc.php';
     if (isset($_SESSION['userId']))
-        echo $twig->render("header.html.twig");
+        echo $twig->render("header.html.twig", ['isAdmin' => $_SESSION['isAdmin']]);
     ?>
 
 </body>

@@ -27,6 +27,7 @@ if (isset($_POST['login-submit'])) {
                     session_start();
                     $_SESSION['userId'] = $row['id'];
                     $_SESSION['username'] = $row['username'];
+                    $_SESSION['isAdmin'] = $row['isAdmin'];
 
                     header("Location: ../index.php?login=success");
                     exit();
