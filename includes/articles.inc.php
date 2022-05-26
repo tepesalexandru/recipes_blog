@@ -34,3 +34,9 @@ function getBlogsByUserId($conn, $userId)
     WHERE Articles.authorId = $userId";
     return $conn->query($sql);
 }
+
+function deleteBlogById($conn, $articleId) 
+{
+    $sql = "DELETE FROM Articles WHERE Articles.Id = $articleId";
+    $conn->query($sql);
+}
