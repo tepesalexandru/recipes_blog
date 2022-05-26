@@ -7,7 +7,6 @@ $twig = new \Twig\Environment($loader);
 $articles = getBlogs($conn);
 
 ?>
-<a href="create_article.php">Create article</a>
 <div class="container">
     <div class="row">
         <?php

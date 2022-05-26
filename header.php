@@ -15,21 +15,17 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/login.css">
     <link rel="stylesheet" href="./styles/comment.css">
-    
+
 </head>
 
-<body>
-    <header>
-        <nav>
-            <div>
-                <?php
-                if (isset($_SESSION['userId'])) {
-                    echo '<form action="includes/logout.inc.php" method="POST">
-                    <button type="submit" name="logout-submit" class="btn btn-secondary">Logout</button>
-                </form>';
-                }
-                ?>
-            </div>
-        </nav>
-    </header>
+<body style="margin-top: 0px">
+
+    <?php
+    require_once './vendor/autoload.php';
+    $loader = new \Twig\Loader\FilesystemLoader("templates");
+    $twig = new \Twig\Environment($loader);
+    if (isset($_SESSION['userId']))
+        echo $twig->render("header.html.twig");
+    ?>
+
 </body>
