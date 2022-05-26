@@ -34,6 +34,7 @@
         title NVARCHAR(50) NOT NULL,
         content NVARCHAR(5000) NOT NULL,
         authorId INT(6) UNSIGNED NOT NULL,
+        publishedOn DATETIME NOT NULL,
         FOREIGN KEY (authorId) REFERENCES Users(id)
     )";
 

@@ -25,3 +25,12 @@ function getArticleComments($conn, $articleId) {
     WHERE Comments.ArticleId = $articleId";
     return $conn->query($sql);
 }
+
+function getBlogsByUserId($conn, $userId) 
+{
+    $sql = "SELECT Articles.Id as id, title, content, username as author, publishedOn
+    FROM Articles
+    JOIN Users ON Articles.AuthorId = Users.Id
+    WHERE Articles.authorId = $userId";
+    return $conn->query($sql);
+}

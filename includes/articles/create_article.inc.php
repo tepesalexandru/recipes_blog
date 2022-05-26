@@ -10,7 +10,7 @@ if (isset($_POST['create-article-submit'])) {
         header("Location: ../../create_article.php?error=emptyfields");
         exit();
     } else {
-        $sql = "INSERT INTO Articles (title, content, authorId) Values (?, ?, ?)";
+        $sql = "INSERT INTO Articles (title, content, authorId, publishedOn) Values (?, ?, ?, now())";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("Location: ../../create_article.php?error=sqlerror");
