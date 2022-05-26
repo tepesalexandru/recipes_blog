@@ -1,9 +1,7 @@
 <?php
-require './includes/dbh.inc.php';
-require './includes/articles.inc.php';
-require_once './vendor/autoload.php';
-$loader = new \Twig\Loader\FilesystemLoader("templates");
-$twig = new \Twig\Environment($loader);
+require 'includes/dbh.inc.php';
+require 'includes/articles.inc.php';
+require 'includes/twig.inc.php';
 $articles = getBlogs($conn);
 
 ?>

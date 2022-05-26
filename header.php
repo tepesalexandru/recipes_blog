@@ -21,9 +21,7 @@ session_start();
 <body style="margin-top: 0px">
 
     <?php
-    require_once './vendor/autoload.php';
-    $loader = new \Twig\Loader\FilesystemLoader("templates");
-    $twig = new \Twig\Environment($loader);
+    require './includes/twig.inc.php';
     if (isset($_SESSION['userId']))
         echo $twig->render("header.html.twig");
     ?>
