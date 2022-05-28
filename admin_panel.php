@@ -7,6 +7,11 @@ require './includes/users.inc.php';
 $users = getUsers($conn);
 $articles = getBlogs($conn);
 $tabSelected = "articles";
+$isAdmin = $_SESSION['isAdmin'];
+
+if($isAdmin == 0) {
+    header("Location: index.php");
+}
 
 if (isset($_GET['tab'])) {
     $tabSelected = $_GET['tab'];
