@@ -1,5 +1,8 @@
 <tr>
 	<th scope="row">{{index}}</th>
+	{% if author is not same as (null) %}
+		<td>{{author}}</td>
+	{% endif %}
 	<td>{{title}}</td>
 	<td>{{publishedOn}}</td>
 	<td style="display:flex; gap: 6px">
