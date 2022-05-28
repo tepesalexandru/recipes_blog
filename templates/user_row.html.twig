@@ -1,0 +1,18 @@
+<tr>
+	<th scope="row">{{index}}</th>
+	<td>{{username}}</td>
+	<td>{{email}}</td>
+	<td style="display:flex; gap: 6px">
+		{% if isDisabled == false %}
+			<form action="includes/disable_user.inc.php" method="POST">
+				<input type="hidden" name="userId" value="{{id}}"/>
+				<button name="disable-user" type="submit" class="btn btn-danger">Disable</button>
+			</form>
+		{% else %}
+			<form action="includes/enable_user.inc.php" method="POST">
+				<input type="hidden" name="userId" value="{{id}}"/>
+				<button name="enable-user" type="submit" class="btn btn-success">Enable</button>
+			</form>
+		{% endif %}
+	</td>
+</tr></td></tr>
