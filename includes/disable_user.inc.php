@@ -1,4 +1,13 @@
 <?php
+session_start();
+$isAdmin = $_SESSION['isAdmin'];
+
+if($isAdmin == 0) {
+    header("Location: ../index.php");
+    exit();
+}
+
+
 if (isset($_POST['disable-user'])) {
     require 'dbh.inc.php';
     $userId = $_POST['userId'];
