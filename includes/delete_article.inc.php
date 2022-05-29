@@ -9,7 +9,7 @@ if (isset($_POST['delete-article'])) {
     $result = $conn->query($sql);
     $firstRow = mysqli_fetch_assoc($result); 
 
-    if($firstRow['authorId'] != $_SESSION['userId'] || $_SESSION['isAdmin'] != 1) {
+    if($firstRow['authorId'] != $_SESSION['userId'] && $_SESSION['isAdmin'] != 1) {
         header("Location: ../index.php");
         exit();
     }
