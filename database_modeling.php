@@ -37,7 +37,7 @@
         content NVARCHAR(5000) NOT NULL,
         authorId INT(6) UNSIGNED NOT NULL,
         publishedOn DATETIME NOT NULL,
-        imageBlob BLOB NOT NULL,
+        imageBlob LONGBLOB NOT NULL,
         FOREIGN KEY (authorId) REFERENCES Users(id)
     )";
 
