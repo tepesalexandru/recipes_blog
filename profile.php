@@ -1,6 +1,7 @@
 <?php
 require 'header.php';
-$imageSrc = "";
+require './includes/users.inc.php';
+$user = getUserById($conn, $_SESSION['userId']);
 ?>
 
 <div class="p-5">
@@ -13,9 +14,9 @@ $imageSrc = "";
         <div class="container col-md-6">
             <div class="mb-5">
                 <label for="Image" class="form-label">Upload new profile picture</label>
-                <input class="form-control" type="file" id="formFile" onchange="preview()" name="article-cover">
+                <input class="form-control" type="file" id="profilePictureFile" onchange="preview()" name="profile-picture">
             </div>
-            <img id="frame" src="assets/default_profile_picture.jpg" class="rounded mx-auto d-block" height="256px" width="256px" style="object-fit: cover;" />
+            <img id="frame" src="123" class="rounded mx-auto d-block" height="256px" width="256px" style="object-fit: cover;" />
         </div>
         <div class="form-group">
             <label for="usernameInput">Username</label>
@@ -25,7 +26,7 @@ $imageSrc = "";
             <label for="emailInput">Email</label>
             <input type="text" class="form-control" id="emailInput" name="email" disabled value="123">
         </div>
-        <button type="submit" name="create-article-submit" class="btn btn-theme">Save changes</button>
+        <button type="submit" name="save-profile-submit" class="btn btn-theme">Save changes</button>
     </form>
 
 </div>
@@ -34,4 +35,6 @@ $imageSrc = "";
     function preview() {
         frame.src = URL.createObjectURL(event.target.files[0]);
     }
+    document.getElementById('usernameInput').value = '<?php echo $_SESSION['username'] ?>';
+    let img = document.getElementById('frame').src='<?php echo "data:image/jpeg;base64," . base64_encode($user['imageBlob']) ?>';
 </script>

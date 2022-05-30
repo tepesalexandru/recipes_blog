@@ -10,7 +10,7 @@ function getBlogs($conn)
 
 function getBlogById($conn, $id)
 {
-    $sql = "SELECT Articles.Id as id, title, content, username as author, imageBlob
+    $sql = "SELECT Articles.Id as id, title, content, username as author, Articles.imageBlob as imageBlob
     FROM Articles
     JOIN Users ON Articles.AuthorId = Users.Id
     WHERE Articles.id = $id";
