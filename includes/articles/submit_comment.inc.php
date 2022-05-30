@@ -10,7 +10,7 @@ if (isset($_POST['comment-article-submit'])) {
         header("Location: ../../view_article.php?id=$articleId");
         exit();
     } else {
-        $sql = "INSERT INTO Comments (content, userId, articleId) Values (?, ?, ?)";
+        $sql = "INSERT INTO Comments (content, userId, articleId, datePosted) Values (?, ?, ?, now())";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("Location: ../../view_article.php?id=$articleId&?error=sqlerror");

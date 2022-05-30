@@ -20,7 +20,7 @@ function getBlogById($conn, $id)
 }
 
 function getArticleComments($conn, $articleId) {
-    $sql = "SELECT Users.Username as name, content FROM Comments
+    $sql = "SELECT Users.Username as name, content, imageBlob, datePosted FROM Comments
     JOIN Users ON Users.Id = Comments.UserId
     WHERE Comments.ArticleId = $articleId";
     return $conn->query($sql);

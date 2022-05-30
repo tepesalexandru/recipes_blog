@@ -25,7 +25,9 @@
 
 	<!-- Comments -->
 	{% for comment in comments %}
-		{% include 'comment.html.twig' with {'name': comment.name, 'content': comment.content} %}
+		{% include 'comment.html.twig' with 
+			{'name': comment.name, 'content': comment.content, 'imageSrc': comment.imageSrc, 'datePosted': comment.datePosted } 
+		%}
 	{% endfor %}
 
 </div>

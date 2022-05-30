@@ -50,6 +50,7 @@
         content NVARCHAR(500) NOT NULL,
         userId INT(6) UNSIGNED NOT NULL,
         articleId INT(6) UNSIGNED NOT NULL,
+        datePosted DATETIME NOT NULL,
         FOREIGN KEY (articleId) REFERENCES Articles(id) ON DELETE CASCADE,
         FOREIGN KEY (userId) REFERENCES Users(id)
     )";
