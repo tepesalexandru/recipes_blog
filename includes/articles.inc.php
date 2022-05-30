@@ -2,7 +2,7 @@
 require 'dbh.inc.php';
 function getBlogs($conn)
 {
-    $sql = "SELECT Articles.Id as id, title, content, username as author, publishedOn, imageBlob
+    $sql = "SELECT Articles.Id as id, title, content, username as author, publishedOn, Articles.imageBlob as imageBlob
     FROM Articles
     JOIN Users ON Articles.AuthorId = Users.Id";
     return $conn->query($sql);

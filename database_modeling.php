@@ -26,6 +26,7 @@
         email NVARCHAR(50) NOT NULL,
         password NVARCHAR(100) NOT NULL,
         isAdmin INT(6) NOT NULL,
+        imageBlob LONGBLOB NOT NULL,
         isDisabled INT(6) NOT NULL DEFAULT 0
     )";
     $conn->query($sql);

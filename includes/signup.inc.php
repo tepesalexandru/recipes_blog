@@ -5,6 +5,8 @@ if (isset($_POST['signup-submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $passwordRepeat = $_POST['password-repeat'];
+    $data = file_get_contents("../assets/default_profile_picture.jpg");
+    $data = mysqli_real_escape_string($conn, $data);
 
     if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
         header("Location: ../signup.php?error=emptyfields&name=" . $username . "&email=" . $email);
@@ -39,7 +41,7 @@ if (isset($_POST['signup-submit'])) {
                 exit();
             } else {
                 $isAdmin = $email == "admin@user.com" ? 1 : 0;
-                $sql = "INSERT INTO Users (username, email, password, isAdmin) VALUES (?, ?, ?, $isAdmin)";
+                $sql = "INSERT INTO Users (username, email, password, isAdmin, imageBlob) VALUES (?, ?, ?, $isAdmin, '$data')";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location: ../signup.php?error=sqlerror");

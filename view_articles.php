@@ -5,7 +5,7 @@ require 'includes/twig.inc.php';
 $articles = getBlogs($conn);
 
 ?>
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <?php
         foreach ($articles as $card) {
