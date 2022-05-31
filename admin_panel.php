@@ -30,7 +30,7 @@ if (isset($_GET['tab'])) {
 </div>
 
 <?php if ($tabSelected == "articles") : ?>
-    <table class="table" style="vertical-align:middle">
+    <table class="table" style="vertical-align:middle; ">
         <thead>
             <tr>
                 <th scope="col">#</th>

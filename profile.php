@@ -24,7 +24,7 @@ $user = getUserById($conn, $_SESSION['userId']);
         </div>
         <div class="form-group mb-5">
             <label for="emailInput">Email</label>
-            <input type="text" class="form-control" id="emailInput" name="email" disabled value="123">
+            <input type="text" class="form-control" id="emailInput" name="email" disabled value="">
         </div>
         <button type="submit" name="save-profile-submit" class="btn btn-theme">Save changes</button>
     </form>
@@ -37,4 +37,5 @@ $user = getUserById($conn, $_SESSION['userId']);
     }
     document.getElementById('usernameInput').value = '<?php echo $_SESSION['username'] ?>';
     let img = document.getElementById('frame').src='<?php echo "data:image/jpeg;base64," . base64_encode($user['imageBlob']) ?>';
+    document.getElementById("emailInput").value='<?php echo $user['email']?>';
 </script>

@@ -5,13 +5,15 @@
 	{% endif %}
 	<td>{{title}}</td>
 	<td>{{publishedOn}}</td>
-	<td style="display:flex; gap: 6px">
-		<a href="view_article.php?id={{id}}">
-			<button class="btn btn-primary">View</button>
-		</a>
-		<form action="includes/delete_article.inc.php" method="POST">
-			<input type="hidden" name="articleId" value="{{id}}"/>
-			<button name="delete-article" type="submit" class="btn btn-danger">Delete</button>
-		</form>
+	<td>
+		<div style="display:flex; gap: 6px">
+			<a href="view_article.php?id={{id}}">
+				<button class="btn btn-primary">View</button>
+			</a>
+			<form action="includes/delete_article.inc.php" method="POST">
+				<input type="hidden" name="articleId" value="{{id}}"/>
+				<button name="delete-article" type="submit" class="btn btn-danger">Delete</button>
+			</form>
+		</td>
 	</td>
-</tr>
+</tr></div></tr>
