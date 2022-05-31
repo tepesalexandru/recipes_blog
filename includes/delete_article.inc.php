@@ -23,7 +23,7 @@ if (isset($_POST['delete-article'])) {
     } else {
         mysqli_stmt_bind_param($stmt, "s", $articleId);
         mysqli_stmt_execute($stmt);
-        header("Location: ../my_articles.php");
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit();
     }
 } else {
