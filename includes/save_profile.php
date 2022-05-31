@@ -2,8 +2,18 @@
 session_start();
 if (isset($_POST['save-profile-submit'])) {
     require 'dbh.inc.php';
-    $data = file_get_contents($_FILES['profile-picture']['tmp_name']);
+    
+    $sql = "SELECT imageBlob FROM Users WHERE Users.Id =" . $_SESSION['userId'];
+    $result = $conn->query($sql);
+    $firstRow = mysqli_fetch_assoc($result); 
+    
+    $data = $firstRow['imageBlob'];
     $data = mysqli_real_escape_string($conn, $data);
+    if (!empty($_FILES['profile-picture']['tmp_name'])) {
+        $data = file_get_contents($_FILES['profile-picture']['tmp_name']);
+        $data = mysqli_real_escape_string($conn, $data);
+    }
+
     $username = $_POST['username'];
     $userId = $_SESSION['userId'];
 

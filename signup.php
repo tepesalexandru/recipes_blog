@@ -2,7 +2,7 @@
 require 'header.php';
 ?>
 <main style="min-height: 100vh; display: flex; align-items: center">
-    <div id="main-wrapper" class="container" >
+    <div  class="container" >
         <div class="row justify-content-center">
             <div class="col-xl-10">
                 <div class="card border-0">
