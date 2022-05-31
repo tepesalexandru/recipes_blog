@@ -1,12 +1,14 @@
-<div class="col-sm">
-	<div class="card" style="width: 18rem;">
-		<img class="card-img-top" src="{{imageSrc}}" alt="Article-cover" />
-		<div class="card-body">
-			<h5 class="card-title">{{title}}</h5>
-			<p class="card-text">{{content}}</p>
-			<footer class="blockquote-footer">Written by
-				<cite title="Author">{{author}}</cite>
-			</footer>
+<div class="col-sm mb-4">
+	<div class="card" style="width: 18rem; height: 100%">
+		<img class="card-img-top" src="{{imageSrc}}" alt="Article-cover"/>
+		<div class="card-body" style="display: flex; flex-direction: column; justify-content: space-between;">
+			<div>
+				<h5 class="card-title">{{title}}</h5>
+				<p class="card-text">{{content}}</p>
+				<footer class="blockquote-footer">Written by
+					<cite title="Author">{{author}}</cite>
+				</footer>
+			</div>
 			<a href="view_article.php?id={{id}}" class="btn btn-primary">Read article</a>
 		</div>
 	</div>
