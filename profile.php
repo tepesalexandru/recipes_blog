@@ -35,7 +35,7 @@ $user = getUserById($conn, $_SESSION['userId']);
     function preview() {
         frame.src = URL.createObjectURL(event.target.files[0]);
     }
-    document.getElementById('usernameInput').value = '<?php echo $_SESSION['username'] ?>';
     let img = document.getElementById('frame').src='<?php echo "data:image/jpeg;base64," . base64_encode($user['imageBlob']) ?>';
+    document.getElementById('usernameInput').value = '<?php echo $_SESSION['username'] ?>';
     document.getElementById("emailInput").value='<?php echo $user['email']?>';
 </script>
