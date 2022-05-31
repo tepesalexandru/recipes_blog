@@ -9,7 +9,7 @@ $articles = getBlogs($conn);
 $tabSelected = "articles";
 $isAdmin = $_SESSION['isAdmin'];
 
-if($isAdmin == 0) {
+if ($isAdmin == 0) {
     header("Location: index.php");
 }
 
@@ -18,12 +18,16 @@ if (isset($_GET['tab'])) {
 }
 ?>
 
-<a href="admin_panel.php?tab=users">
-    <button class=" btn btn-secondary" name="admin-view-users">View users</button>
-</a>
-<a href="admin_panel.php?tab=articles">
-    <button class="btn btn-secondary" name="admin-view-articles">View articles</button>
-</a>
+
+
+<div class="btn-group mt-4 mb-4" role="group" aria-label="Basic example" style="width: 100%; display: flex; justify-content: center; gap: 20px;">
+    <a href="admin_panel.php?tab=users">
+        <button class=" btn btn-secondary" name="admin-view-users">View users</button>
+    </a>
+    <a href="admin_panel.php?tab=articles">
+        <button class="btn btn-secondary" name="admin-view-articles">View articles</button>
+    </a>
+</div>
 
 <?php if ($tabSelected == "articles") : ?>
     <table class="table" style="vertical-align:middle">
